@@ -106,17 +106,17 @@ const NavBar = ({ user, setUser, isDarkMode, setIsDarkMode }) => {
       <Menu.Item header className="nav-title">
         <div className="nav-logo">
           <Icon name="user circle" />
-          Profile Store
+          Contactryy
         </div>
         <small>
           Made with <Icon name="heart" color="pink" /> by &nbsp;
           <a
-            href="http://ahmeraftabpatel.in/"
+            href="https://iamahmer.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-link"
           >
-            Ahmer
+            The Golden Dev
           </a>
         </small>
       </Menu.Item>

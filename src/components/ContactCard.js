@@ -27,7 +27,7 @@ const ContactCard = ({
   };
 
   return (
-    <Card fluid className={isDarkMode ? 'dark-mode-card' : ''}>
+    <Card style = {{boxShadow : 'rgb(0 0 0 / 8%) 0px 3px 28px'}} fluid className={isDarkMode ? 'dark-mode-card' : ''}>
       <Card.Content>
         <Header className="card-header">
           <div>

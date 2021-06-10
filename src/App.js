@@ -68,13 +68,14 @@ const App = () => {
 
   return (
     <Segment className="main-segment" inverted={isDarkMode}>
-      <Container className="container">
-        <NavBar
+      <NavBar
           user={user}
           setUser={setUser}
           isDarkMode={isDarkMode}
           setIsDarkMode={setIsDarkMode}
         />
+      <Container className="container">
+        
         <Routes
           contacts={contacts}
           setContacts={setContacts}

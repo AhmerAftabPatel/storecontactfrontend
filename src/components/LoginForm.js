@@ -6,7 +6,7 @@ import contactService from '../services/contacts';
 import authService from '../services/auth';
 import storageService from '../utils/localStorageHelpers';
 import { useMediaQuery } from 'react-responsive';
-import { Segment, Form, Button, Icon, Header } from 'semantic-ui-react';
+import { Segment, Form, Button, Icon, Header, Container } from 'semantic-ui-react';
 
 const LoginForm = ({ setUser, notify, isDarkMode }) => {
   const [credentials, setCredentials] = useState({
@@ -59,9 +59,9 @@ const LoginForm = ({ setUser, notify, isDarkMode }) => {
       inverted={isDarkMode}
     >
       <Header as={isMobile ? 'h3' : 'h2'} textAlign="center">
-        <Icon name="sign-in" />
         Login to your account
       </Header>
+      <Container style = {{width : "400px"}}>
       <Form
         onSubmit={handleLogin}
         className={isDarkMode ? 'dark-mode-auth-form auth-form' : 'auth-form'}
@@ -117,6 +117,8 @@ const LoginForm = ({ setUser, notify, isDarkMode }) => {
           Don't have an account? <Link to="/register">Register.</Link>
         </Header>
       </Form>
+      <DemoCredsInfo />
+      </Container>
       {error && (
         <FormError
           message={error.message}
@@ -125,7 +127,7 @@ const LoginForm = ({ setUser, notify, isDarkMode }) => {
           setError={setError}
         />
       )}
-      <DemoCredsInfo />
+      
     </Segment>
   );
 };
