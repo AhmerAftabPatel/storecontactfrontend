@@ -128,7 +128,7 @@ a:hover {
 }
 
 .login-reg-card {
-  padding-left: 14em !important;
+  /* padding-left: 14em !important; */
   padding-right: 14em !important;
   padding-bottom: 2em !important;
 }

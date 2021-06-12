@@ -116,6 +116,7 @@ const LinkFormModal = ({
       open={modalOpen}
       trigger={
         <Button
+        style ={{borderRadius : "21px"}}
           color={isTypeEdit ? null : 'green'}
           size={isTypeEdit ? 'tiny' : isMobile ? 'mini' : 'small'}
           floated={isTypeEdit ? 'right' : 'left'}

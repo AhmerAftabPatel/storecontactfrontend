@@ -6,7 +6,8 @@ import contactService from '../services/contacts';
 import authService from '../services/auth';
 import storageService from '../utils/localStorageHelpers';
 import { useMediaQuery } from 'react-responsive';
-import { Segment, Form, Button, Icon, Header } from 'semantic-ui-react';
+import { Segment, Form, Button, Icon, Header,Grid,Image} from 'semantic-ui-react';
+import imageUrl from "./assets/landing.jpg"
 
 const RegisterForm = ({ setUser, notify, isDarkMode }) => {
   const [userDetails, setUserDetails] = useState({
@@ -58,13 +59,19 @@ const RegisterForm = ({ setUser, notify, isDarkMode }) => {
 
   return (
     <Segment
+    basic
       className={
         isDarkMode ? 'login-reg-card dark-mode-segment' : 'login-reg-card'
       }
       inverted={isDarkMode}
     >
+      <Grid columns ="2" stackable>
+          <Grid.Row>
+            <Grid.Column>
+            <Image style={{marginRight : window.innerWidth > 800 ? "260px" : "",marginTop : window.innerWidth > 800 ? "90px" : ""}} size="large" src={imageUrl}></Image>
+            </Grid.Column>
+            <Grid.Column>
       <Header as={isMobile ? 'h3' : 'h2'} textAlign="center">
-        <Icon name="signup" />
         Create an account
       </Header>
       <Form
@@ -73,7 +80,7 @@ const RegisterForm = ({ setUser, notify, isDarkMode }) => {
       >
         <Form.Input
           required
-          placeholder="For ex. Ben Awad"
+          placeholder="For ex. Ahmer"
           label="Dispay Name"
           type="text"
           name="displayName"
@@ -84,7 +91,7 @@ const RegisterForm = ({ setUser, notify, isDarkMode }) => {
         />
         <Form.Input
           required
-          placeholder="For ex. abc@example.com"
+          placeholder="For ex. ahmer@example.com"
           label="Email"
           type="email"
           name="email"
@@ -151,6 +158,9 @@ const RegisterForm = ({ setUser, notify, isDarkMode }) => {
       </Form>
       {error && <FormError message={error} setError={setError} />}
       <DemoCredsInfo />
+      </Grid.Column>
+      </Grid.Row>
+      </Grid>
     </Segment>
   );
 };

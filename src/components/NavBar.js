@@ -49,7 +49,7 @@ const NavBar = ({ user, setUser, isDarkMode, setIsDarkMode }) => {
           <Icon name="user" />
           {`Hi, ${user.displayName}`}
         </Menu.Item>
-        <Menu.Item name="Logout" onClick={handleLogout} icon="sign-out" />
+        <Menu.Item style={{borderRadius : "21px",background : "#FF6666",marginRight : "20px"}} name="Logout" onClick={handleLogout} icon="sign-out" />
       </>
     );
   };
@@ -81,15 +81,15 @@ const NavBar = ({ user, setUser, isDarkMode, setIsDarkMode }) => {
           as={Link}
           name="Register"
           to="/register"
-          active={location.pathname === '/register'}
           icon="signup"
+          style={{borderRadius : "21px",background : location.pathname === '/register' ? "#22CB5C" : ""}}
         />
         <Menu.Item
           as={Link}
           name="Login"
           to="/login"
-          active={location.pathname === '/login'}
           icon="sign-in"
+          style={{borderRadius : "21px",background : location.pathname === '/login' ? "#22CB5C" : "", color : "black"}}
         />
       </>
     );
@@ -100,21 +100,24 @@ const NavBar = ({ user, setUser, isDarkMode, setIsDarkMode }) => {
       borderless={isMobile}
       inverted={isDarkMode}
       size="small"
+      // inverted
+      secondary
       color="teal"
       className="nav-bar"
     >
       <Menu.Item header className="nav-title">
         <div className="nav-logo">
-          <Icon name="user circle" />
+          <Icon name="font awesome" />
           Contactryy
         </div>
         <small>
-          Made with <Icon name="heart" color="pink" /> by &nbsp;
+          by &nbsp;
           <a
             href="https://iamahmer.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-link"
+            style={{color : "gold"}}
           >
             The Golden Dev
           </a>
@@ -122,7 +125,7 @@ const NavBar = ({ user, setUser, isDarkMode, setIsDarkMode }) => {
       </Menu.Item>
       <Menu.Menu position="right">
         {user ? <>{logoutMenu()}</> : <>{loginRegisterMenu()}</>}
-        {!isMobile && (
+        {/* {!isMobile && (
           <Menu.Item>
             <Icon
               name={isDarkMode ? 'moon' : 'sun'}
@@ -134,7 +137,7 @@ const NavBar = ({ user, setUser, isDarkMode, setIsDarkMode }) => {
               onClick={handleDarkModeToggle}
             />
           </Menu.Item>
-        )}
+        )} */}
       </Menu.Menu>
     </Menu>
   );

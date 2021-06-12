@@ -10,7 +10,8 @@ const Search = ({ search, setSearch, isDarkMode }) => {
     <div className="search-card">
       <Input
         className={isDarkMode ? 'dark-mode-input' : ''}
-        fluid
+        fluid ={window.innerWidth > 800 ? false : true}
+        style ={{float : window.innerWidth > 800 ? "right" : "",borderRadius : "21px"}}
         size="large"
         type="text"
         value={search}

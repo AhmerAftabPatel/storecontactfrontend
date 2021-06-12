@@ -1,11 +1,9 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Search from './Search';
-import AddContactModal from '../components/AddContactModal';
-import ContactsDisplay from '../components/ContactsDisplay';
 import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
 import storageService from '../utils/localStorageHelpers';
+import Dashboard from './Dashboard';
 
 const Routes = ({
   contacts,
@@ -25,27 +23,16 @@ const Routes = ({
       <Route exact path="/">
         {storageService.loadUser() || user ? (
           <>
-            <Search
-              setSearch={setSearch}
-              search={search}
-              isDarkMode={isDarkMode}
-            />
-            <AddContactModal
-              setContacts={setContacts}
-              options={options}
-              handleOptionAddition={handleOptionAddition}
-              notify={notify}
-              isDarkMode={isDarkMode}
-            />
-            <ContactsDisplay
-              contacts={contacts}
-              setContacts={setContacts}
-              search={search}
-              options={options}
-              handleOptionAddition={handleOptionAddition}
-              notify={notify}
-              isLoading={isLoading}
-              isDarkMode={isDarkMode}
+            <Dashboard 
+            contacts = {contacts}
+            setContacts ={setContacts}
+            search ={search}
+            setSearch ={setSearch}
+            options ={options}
+            notify={notify}
+            handleOptionAddition ={handleOptionAddition}
+            isLoading={isLoading}
+            isDarkMode={isDarkMode}
             />
           </>
         ) : (

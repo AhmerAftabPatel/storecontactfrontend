@@ -91,6 +91,7 @@ const AddContactModal = ({
         <Button
           color="teal"
           icon
+          style ={{borderRadius : "21px"}}
           labelPosition="left"
           fluid={isMobile}
           size={isMobile ? 'medium' : 'large'}

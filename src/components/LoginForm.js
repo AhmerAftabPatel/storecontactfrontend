@@ -6,7 +6,8 @@ import contactService from '../services/contacts';
 import authService from '../services/auth';
 import storageService from '../utils/localStorageHelpers';
 import { useMediaQuery } from 'react-responsive';
-import { Segment, Form, Button, Icon, Header, Container } from 'semantic-ui-react';
+import { Segment, Form, Button, Icon, Header, Container,Image } from 'semantic-ui-react';
+import imageUrl from "./assets/landing.jpg"
 
 const LoginForm = ({ setUser, notify, isDarkMode }) => {
   const [credentials, setCredentials] = useState({
@@ -53,11 +54,15 @@ const LoginForm = ({ setUser, notify, isDarkMode }) => {
 
   return (
     <Segment
+    basic
+    style ={{paddingLeft : "14em"}}
       className={
-        isDarkMode ? 'login-reg-card dark-mode-segment' : 'login-reg-card'
+        isDarkMode ? 'login-reg-card login-form dark-mode-segment' : 'login-reg-card login-from'
       }
       inverted={isDarkMode}
+      textAlign="center"
     >
+      <Image size="medium" style={{marginLeft : window.innerWidth > 800 ? "210px" : ""}} src={imageUrl}></Image>
       <Header as={isMobile ? 'h3' : 'h2'} textAlign="center">
         Login to your account
       </Header>
@@ -66,6 +71,7 @@ const LoginForm = ({ setUser, notify, isDarkMode }) => {
         onSubmit={handleLogin}
         className={isDarkMode ? 'dark-mode-auth-form auth-form' : 'auth-form'}
       >
+        
         <Form.Input
           required
           placeholder="For ex. abc@example.com"
@@ -73,6 +79,7 @@ const LoginForm = ({ setUser, notify, isDarkMode }) => {
           type="email"
           name="email"
           value={email}
+          
           onChange={handleOnChange}
           icon="at"
           iconPosition="left"
@@ -96,17 +103,14 @@ const LoginForm = ({ setUser, notify, isDarkMode }) => {
         />
 
         <Button
-          animated="vertical"
-          color="teal"
-          icon
-          labelPosition="left"
+          // animated="vertical"
+          style = {{color:"black",width : "150px",background : "#22CB5C",borderRadius : "21px",textAlign : "center"}}
+          // labelPosition="left"
           type="submit"
-          floated="right"
           loading={isLoading}
           size={isMobile ? 'small' : 'large'}
           fluid={isMobile}
         >
-          <Icon name="sign-in" />
           Login
         </Button>
         <Header
