@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import storageService from '../utils/localStorageHelpers';
 import { useMediaQuery } from 'react-responsive';
 import { Menu, Icon, Dropdown } from 'semantic-ui-react';
 
 const NavBar = ({ user, setUser, isDarkMode, setIsDarkMode }) => {
-  const [iconLoading, setIconLoading] = useState(false);
+  // const [iconLoading, setIconLoading] = useState(false);
   const location = useLocation();
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -17,9 +17,9 @@ const NavBar = ({ user, setUser, isDarkMode, setIsDarkMode }) => {
 
   const handleDarkModeToggle = () => {
     setIsDarkMode(!isDarkMode);
-    setIconLoading(true);
+    // setIconLoading(true);
     storageService.saveDarkMode(!isDarkMode);
-    setTimeout(() => setIconLoading(false), 2150);
+    // setTimeout(() => setIconLoading(false), 2150);
   };
 
   const logoutMenu = () => {

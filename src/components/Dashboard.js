@@ -2,7 +2,7 @@ import React from 'react';
 import Search from './Search';
 import AddContactModal from '../components/AddContactModal';
 import ContactsDisplay from '../components/ContactsDisplay';
-import { Container, Header, Icon } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 /**
 * @author

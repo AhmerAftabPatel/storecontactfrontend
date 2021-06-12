@@ -6,7 +6,7 @@ import contactService from '../services/contacts';
 import authService from '../services/auth';
 import storageService from '../utils/localStorageHelpers';
 import { useMediaQuery } from 'react-responsive';
-import { Segment, Form, Button, Icon, Header, Container,Image } from 'semantic-ui-react';
+import { Segment, Form, Button, Header, Container,Image } from 'semantic-ui-react';
 import imageUrl from "./assets/landing.jpg"
 
 const LoginForm = ({ setUser, notify, isDarkMode }) => {
